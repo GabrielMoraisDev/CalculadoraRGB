@@ -263,6 +263,8 @@ function limpar() {
 
 // Função para adicionar um caractere à tela da calculadora
 function adicionarCaractere(caractere) {
+    var onoff = document.getElementById('onoff')
+    if(onoff.classList.contains('bg-power-press')){
     var valor = document.getElementById('valor').innerText;
     var elemento = document.getElementById('valor');
 
@@ -275,7 +277,7 @@ function adicionarCaractere(caractere) {
                 elemento.innerText = valor + caractere;
             }
         }
-    }
+    }}
 }
 
 // Função para casos Nulos
