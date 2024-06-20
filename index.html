@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Calculadora</title>
+</head>
+
+<style>
+    :root{
+        --color: #13112b;
+        --color-press: #13112b;
+        --h-custom: -75%;
+    }
+</style>
+
+<body id="pagina">
+
+    <main id="content" class="op-1 flex ctr content">
+        <div class="bg-calculadora">
+            <div class="calculadora">
+                <div class="bg-console">
+                    <div class="console">
+                        <p class="ctr flex consoler bg-red" id="valor"> </p>
+                    </div>
+                    <div class="console2">
+                        <p class="ctr flex consoler" id="valor2"> </p>
+                    </div>
+                </div>
+    
+                <div class="flex">
+                    <div id="onoff" class="bg-power-press" onclick="onoff('onoff')" style="--color-rgb: #b47bff;">
+                        <div class="power-press flex ctr">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-power" viewBox="0 0 16 16">
+                                <path d="M7.5 1v7h1V1z"/>
+                                <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812"/>
+                              </svg>
+                        </div>
+                    </div>
+    
+                    <div id="white" class="bg-power" onclick="white('white')" style="--color-rgb: #f6ff74;">
+                        <div class="power flex ctr">WHITE</div>
+                    </div>
+    
+                    <div id="rgb" class="bg-power" onclick="power('rgb')" style="--color-rgb: #ff8080;">
+                        <div class="power flex ctr">RGB</div>
+                    </div>
+                    <div id="rgb2" class="bg-power" onclick="power2('rgb2')" style="--color-rgb: #7bffb2;">
+                        <div class="power flex ctr">RGB2</div>
+                    </div>
+    
+                </div>    
+    
+                <div class="grid-teclas">
+    
+                    <div id="erase" class="change bg-tecla" onclick="tecla('erase'); erase('erase')" style="--color-rgb: #65ffa0; --second-color-rgb: #fffc5d;">
+                        <div class="tecla flex ctr">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace-fill" viewBox="0 0 16 16">
+                                <path d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8z"/>
+                            </svg>
+                        </div>
+                    </div>
+    
+                    <div id="ce" class="change bg-tecla" onclick="tecla('ce'); erase_all('ce')" style="--color-rgb: #ee71ff; --second-color-rgb: #65edff;">
+                        <div class="tecla flex ctr">CE</div>
+                    </div>
+    
+                    <div id="c" class="change bg-tecla" onclick="tecla('c'); erase_all('c')" style="--color-rgb: #71ff78; --second-color-rgb: #9d60ff;">
+                        <div class="tecla flex ctr">C</div>
+                    </div>
+    
+                    <div id="+" class="change bg-tecla" onclick="tecla('+'); operate('+')" style="--color-rgb: #ff69f2; --second-color-rgb: #f4ff91;">
+                        <div class="tecla flex ctr">+</div>
+                    </div>
+    
+                    <div id="7" class="change bg-tecla" onclick="tecla('7'); adicionarCaractere('7')" style="--color-rgb: #fffc5d; --second-color-rgb: #ff9050;">
+                        <div class="tecla flex ctr">7</div>
+                    </div>
+    
+                    <div id="8" class="change bg-tecla" onclick="tecla('8'); adicionarCaractere('8')" style="--color-rgb: #65edff; --second-color-rgb: #6596ff;">
+                        <div class="tecla flex ctr">8</div>
+                    </div>
+    
+                    <div id="9" class="change bg-tecla" onclick="tecla('9'); adicionarCaractere('9')" style="--color-rgb: #9d60ff; --second-color-rgb: #beff56;">
+                        <div class="tecla flex ctr">9</div>
+                    </div>
+    
+                    <div id="-" class="change bg-tecla" onclick="tecla('-'); operate('-')" style="--color-rgb: #ff9050; --second-color-rgb: #75ffe1;">
+                        <div class="tecla flex ctr">-</div>
+                    </div>
+    
+                    <div id="4" class="change bg-tecla" onclick="tecla('4'); adicionarCaractere('4')" style="--color-rgb: #ff79ac; --second-color-rgb: #6596ff;">
+                        <div class="tecla flex ctr">4</div>
+                    </div>
+    
+                    <div id="5" class="change bg-tecla" onclick="tecla('5'); adicionarCaractere('5')" style="--color-rgb: #beff56; --second-color-rgb: #f4ff91;">
+                        <div class="tecla flex ctr">5</div>
+                    </div>
+    
+                    <div id="6" class="change bg-tecla" onclick="tecla('6'); adicionarCaractere('6')" style="--color-rgb: #6596ff; --second-color-rgb: #c9b2ff;">
+                        <div class="tecla flex ctr">6</div>
+                    </div>
+    
+                    <div id="X" class="change bg-tecla" onclick="tecla('X'); operate('X')" style="--color-rgb: #f4ff91; --second-color-rgb: #75ffe1;">
+                        <div class="tecla flex ctr">X</div>
+                    </div>
+    
+                    <div id="1" class="change bg-tecla" onclick="tecla('1'); adicionarCaractere('1')" style="--color-rgb: #ff6d6d; --second-color-rgb: #71ff78;">
+                        <div class="tecla flex ctr">1</div>
+                    </div>
+    
+                    <div id="2" class="change bg-tecla" onclick="tecla('2'); adicionarCaractere('2')" style="--color-rgb: #c987ff; --second-color-rgb: #6dfaff;">
+                        <div class="tecla flex ctr">2</div>
+                    </div>
+    
+                    <div id="3" class="change bg-tecla" onclick="tecla('3'); adicionarCaractere('3')" style="--color-rgb: #71ff78; --second-color-rgb: #ff79ac;">
+                        <div class="tecla flex ctr">3</div>
+                    </div>
+    
+                    <div id="/" class="change bg-tecla" onclick="tecla('/'); operate('/')" style="--color-rgb: #75ffe1; --second-color-rgb: #ff9050;">
+                        <div class="tecla flex ctr">/</div>
+                    </div>
+    
+                    <div id="0" class="change bg-tecla" onclick="tecla('0'); adicionarCaractere('0')" style="--color-rgb: #6dfaff; --second-color-rgb: #fff675;">
+                        <div class="tecla flex ctr">0</div>
+                    </div>
+    
+                    <div id="," class="change bg-tecla" onclick="tecla(','); adicionarCaractere(',')" style="--color-rgb: #87ff8d; --second-color-rgb: #c987ff;">
+                        <div class="tecla flex ctr">,</div>
+                    </div>
+    
+                    <div id="invert" class="change bg-tecla" onclick="tecla('invert'); invert()" style="--color-rgb: #c9b2ff; --second-color-rgb: #beff56;">
+                        <div class="tecla flex ctr">+/-</div>
+                    </div>
+    
+                    <div id="=" class="change bg-tecla" onclick="tecla('='); calcular()" style="--color-rgb: #fff675; --second-color-rgb: #ff9050;">
+                        <div class="tecla flex ctr">=</div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </main>
+
+<script>
+
+
+</script>
+
+</body>
+</html>
+
+
